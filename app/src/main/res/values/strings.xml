@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PracticeApplication</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="refreshButton">REFRESH</string>
+    <string name="first_item_menu" translatable="false">Next Fragment</string>
+    <string name="speakButton">SPEAK</string>
+    <string name="speech_button">Hi, this is your Android App</string>
+    <string name="change_button">Change</string>
+    <string name="done_text">Done!</string>
+</resources>

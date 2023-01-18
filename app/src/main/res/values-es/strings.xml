@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AplicacionPractica</string>
+    <string name="refreshButton">REFRESCAR</string>
+    <string name="speakButton">HABLA</string>
+    <string name="change_button">Cambiar</string>
+    <string name="speech_button">Hola, esta es tu aplicación Android</string>
+    <string name="done_text">Hecho!</string>
+</resources>
