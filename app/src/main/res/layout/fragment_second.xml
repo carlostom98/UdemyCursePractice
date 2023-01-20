@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".view.SecondFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.SecondFragment"
     android:padding="20dp">
 
     <data>
@@ -9,39 +10,80 @@
             name="textSecondFragment"
             type="com.example.practiceapplication.model.fragmentsText.FragmentTwoText" />
     </data>
-
-    <LinearLayout
-        android:orientation="vertical"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintSecondF"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textOne"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@{textSecondFragment.component1()}"
-        android:textSize="25sp"
-        android:textAlignment="center"
-        android:background="@android:color/holo_blue_light"
-        />
-    <TextView
-        android:id="@+id/textTwo"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@{textSecondFragment.component2()}"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:background="@android:color/darker_gray"
-        />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/constraintSecondF"
+            app:layout_constraintStart_toStartOf="@+id/constraintSecondF"
+            app:layout_constraintTop_toTopOf="@+id/constraintSecondF">
 
-    <Button
-        android:id="@+id/buttonRequest"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:text="@string/make_request"
-        />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_light"
+                android:text="@{textSecondFragment.component1()}"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/darker_gray"
+                android:text="@{textSecondFragment.component2()}"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/buttonRequest"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:text="@string/make_request"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/imageCamera"
+            android:layout_marginTop="20dp"
+            android:background="@android:drawable/presence_video_away"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <EditText
+            android:id="@+id/enterText"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="@+id/imageCamera" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 </layout>

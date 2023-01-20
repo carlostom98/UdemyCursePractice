@@ -3,7 +3,7 @@ package com.example.practiceapplication.view
 import com.example.practiceapplication.R
 import com.example.practiceapplication.databinding.FragmentBeginBinding
 import com.example.practiceapplication.model.fragmentsText.FragmentOneText
-import com.example.practiceapplication.model.fragmentsText.FragmentTwoText
+import com.example.practiceapplication.view.fragments.BeginFragment
 import java.util.Locale
 
 fun FragmentOneText.setLanguage(activity: MainActivity, binding: FragmentBeginBinding){
@@ -12,8 +12,8 @@ fun FragmentOneText.setLanguage(activity: MainActivity, binding: FragmentBeginBi
     binding.invalidateAll()
 }
 
-fun BeginFragment.setLanguageLocale(lang:String){
+fun BeginFragment.setLanguageLocale(lang:String?){
     tts?.apply {
-        language=Locale(lang)
+        language=Locale(lang!!)
     }
 }

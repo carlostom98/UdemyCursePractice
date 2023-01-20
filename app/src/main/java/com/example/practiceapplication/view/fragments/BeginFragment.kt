@@ -1,4 +1,4 @@
-package com.example.practiceapplication.view
+package com.example.practiceapplication.view.fragments
 
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
@@ -13,6 +13,9 @@ import com.example.practiceapplication.R
 import com.example.practiceapplication.databinding.FragmentBeginBinding
 import com.example.practiceapplication.model.LanguagePreferences
 import com.example.practiceapplication.model.fragmentsText.FragmentOneText
+import com.example.practiceapplication.view.MainActivity
+import com.example.practiceapplication.view.setLanguage
+import com.example.practiceapplication.view.setLanguageLocale
 import timber.log.Timber
 import java.util.*
 
@@ -24,7 +27,6 @@ class BeginFragment : Fragment(), TextToSpeech.OnInitListener, AdapterView.OnIte
     var tts: TextToSpeech? = null
     private val languageList = arrayOf("en", "es", "fr")
     private val fragmentOneText = FragmentOneText("Hola", "Hola")
-    private lateinit var languageSelector:String
 
 
     override fun onCreateView(
@@ -36,7 +38,11 @@ class BeginFragment : Fragment(), TextToSpeech.OnInitListener, AdapterView.OnIte
         _binding = FragmentBeginBinding.inflate(inflater, container, false)
         binding.buttonRefresh.setOnClickListener {
             it.findNavController()
-                .navigate(BeginFragmentDirections.actionBeginFragmentToSecondFragment2("HOLA FRAGMENT"))
+                .navigate(
+                    com.example.practiceapplication.view.fragments.BeginFragmentDirections.actionBeginFragmentToSecondFragment2(
+                        "HOLA FRAGMENT"
+                    )
+                )
         }
         tts = TextToSpeech(this.context, this)
         binding.viewReferences = fragmentOneText
@@ -61,7 +67,7 @@ class BeginFragment : Fragment(), TextToSpeech.OnInitListener, AdapterView.OnIte
         activity.languageViewModel.languageMutableContext.observe(activity){
             activity.context=it
             fragmentOneText.setLanguage(activity, binding)
-            setLanguageLocale(languageSelector)
+            setLanguageLocale(activity.languageViewModel.languageGlobal)
         }
     }
 
@@ -74,7 +80,7 @@ class BeginFragment : Fragment(), TextToSpeech.OnInitListener, AdapterView.OnIte
         if (status == TextToSpeech.SUCCESS) {
             binding.textFirstFragment.text = activity.context.getText(R.string.done_text)
             tts?.apply {
-                language = Locale("en")
+                language = activity.languageViewModel.languageGlobal.let { Locale(it) }
             }
         } else {
             binding.textFirstFragment.text = "Try Again!"
@@ -86,11 +92,10 @@ class BeginFragment : Fragment(), TextToSpeech.OnInitListener, AdapterView.OnIte
             parent?.getItemAtPosition(position).toString(),
             activity.context
         )
-        languageSelector=parent?.getItemAtPosition(position).toString()
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {
-        TODO("Not yet implemented")
+
     }
 
     override fun onDestroy() {

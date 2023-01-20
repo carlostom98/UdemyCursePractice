@@ -2,12 +2,16 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.BeginFragment">
+    tools:context=".view.fragments.BeginFragment">
 <data>
     <variable
         name="viewReferences"
         type="com.example.practiceapplication.model.fragmentsText.FragmentOneText" />
 </data>
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintBeginFragment"
         android:layout_width="match_parent"
@@ -72,4 +76,5 @@
             app:layout_constraintTop_toBottomOf="@+id/speakButton"
             tools:ignore="SpeakableTextPresentCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

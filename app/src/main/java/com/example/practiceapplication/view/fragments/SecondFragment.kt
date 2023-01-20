@@ -1,4 +1,4 @@
-package com.example.practiceapplication.view
+package com.example.practiceapplication.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.example.practiceapplication.databinding.FragmentSecondBinding
 import com.example.practiceapplication.model.fragmentsText.FragmentTwoText
+import com.example.practiceapplication.view.MainActivity
 import com.example.practiceapplication.viewModel.RequestDataViewModel
 import kotlinx.coroutines.*
 
@@ -19,7 +20,7 @@ class SecondFragment() : Fragment(){
     private var _binding:FragmentSecondBinding?=null
     private val binding get() = _binding!!
     private lateinit var activity: MainActivity
-    private val args:SecondFragmentArgs by navArgs()
+    private val args: com.example.practiceapplication.view.fragments.SecondFragmentArgs by navArgs()
     var fragmentTwoText=FragmentTwoText()
     private val requestDataViewModel:RequestDataViewModel by viewModels()
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/beginFragment"
-        android:name="com.example.practiceapplication.view.BeginFragment"
+        android:name="com.example.practiceapplication.view.fragments.BeginFragment"
         android:label="fragment_begin"
         tools:layout="@layout/fragment_begin" >
         <action
@@ -16,11 +16,16 @@
     </fragment>
     <fragment
         android:id="@+id/secondFragment2"
-        android:name="com.example.practiceapplication.view.SecondFragment"
+        android:name="com.example.practiceapplication.view.fragments.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" >
         <argument
             android:name="hiFragment"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/materialDesignFrag"
+        android:name="com.example.practiceapplication.view.fragments.MaterialDesignFragment"
+        android:label="fragment_material_design"
+        tools:layout="@layout/fragment_material_design" />
 </navigation>
