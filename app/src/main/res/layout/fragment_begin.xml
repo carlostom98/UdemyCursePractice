@@ -6,7 +6,7 @@
 <data>
     <variable
         name="viewReferences"
-        type="com.example.practiceapplication.model.ViewReferences" />
+        type="com.example.practiceapplication.model.fragmentsText.FragmentOneText" />
 </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintBeginFragment"

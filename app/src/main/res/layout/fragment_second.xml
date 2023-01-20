@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.SecondFragment">
+    tools:context=".view.SecondFragment"
+    android:padding="20dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+        <variable
+            name="textSecondFragment"
+            type="com.example.practiceapplication.model.fragmentsText.FragmentTwoText" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{textSecondFragment.component1()}"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:background="@android:color/holo_blue_light"
+        />
+    <TextView
+        android:id="@+id/textTwo"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{textSecondFragment.component2()}"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:background="@android:color/darker_gray"
+        />
+
+    <Button
+        android:id="@+id/buttonRequest"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:text="@string/make_request"
+        />
+    </LinearLayout>
+</layout>

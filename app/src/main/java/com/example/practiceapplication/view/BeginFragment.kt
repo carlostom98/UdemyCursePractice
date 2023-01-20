@@ -1,6 +1,5 @@
 package com.example.practiceapplication.view
 
-import android.content.Context
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import androidx.fragment.app.Fragment
@@ -9,13 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.practiceapplication.R
 import com.example.practiceapplication.databinding.FragmentBeginBinding
 import com.example.practiceapplication.model.LanguagePreferences
-import com.example.practiceapplication.model.ViewReferences
-import com.example.practiceapplication.viewModel.LanguageViewModel
+import com.example.practiceapplication.model.fragmentsText.FragmentOneText
 import timber.log.Timber
 import java.util.*
 
@@ -26,7 +23,7 @@ class BeginFragment : Fragment(), TextToSpeech.OnInitListener, AdapterView.OnIte
     private lateinit var activity: MainActivity
     var tts: TextToSpeech? = null
     private val languageList = arrayOf("en", "es", "fr")
-    private val viewReferences = ViewReferences("Hola", "Hola")
+    private val fragmentOneText = FragmentOneText("Hola", "Hola")
     private lateinit var languageSelector:String
 
 
@@ -42,7 +39,7 @@ class BeginFragment : Fragment(), TextToSpeech.OnInitListener, AdapterView.OnIte
                 .navigate(BeginFragmentDirections.actionBeginFragmentToSecondFragment2("HOLA FRAGMENT"))
         }
         tts = TextToSpeech(this.context, this)
-        binding.viewReferences = viewReferences
+        binding.viewReferences = fragmentOneText
         binding.spinner.adapter =
             ArrayAdapter(activity.context, android.R.layout.simple_list_item_1, languageList)
         binding.spinner.onItemSelectedListener = this
@@ -63,7 +60,7 @@ class BeginFragment : Fragment(), TextToSpeech.OnInitListener, AdapterView.OnIte
 
         activity.languageViewModel.languageMutableContext.observe(activity){
             activity.context=it
-            viewReferences.setLanguage(activity, binding)
+            fragmentOneText.setLanguage(activity, binding)
             setLanguageLocale(languageSelector)
         }
     }

@@ -8,4 +8,7 @@
     <string name="speech_button">Hi, this is your Android App</string>
     <string name="change_button">Change</string>
     <string name="done_text">Done!</string>
+    <string name="home_button">Home</string>
+    <string name="principal_button">Principal</string>
+    <string name="make_request">Make Request</string>
 </resources>
