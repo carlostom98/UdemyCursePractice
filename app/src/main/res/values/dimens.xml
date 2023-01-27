@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_img_size">88dp</dimen>
+    <dimen name="paddingCards">8dp</dimen>
+    <dimen name="buttonsMargin">5dp</dimen>
+</resources>

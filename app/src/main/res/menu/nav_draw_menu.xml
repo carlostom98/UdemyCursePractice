@@ -3,7 +3,7 @@
 <item
     android:title="@string/first_item_menu"
     android:id="@+id/materialDesignFrag"
-    android:icon="@drawable/ic_launcher_background"
+    android:icon="@drawable/ic_storefront"
     android:enabled="true"
     android:visible="true"
     />

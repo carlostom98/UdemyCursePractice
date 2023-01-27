@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/beginFragment"
         android:name="com.example.practiceapplication.view.fragments.BeginFragment"
-        android:label="fragment_begin"
+        android:label="App TTS"
         tools:layout="@layout/fragment_begin" >
         <action
             android:id="@+id/action_beginFragment_to_secondFragment2"
@@ -26,6 +26,6 @@
     <fragment
         android:id="@+id/materialDesignFrag"
         android:name="com.example.practiceapplication.view.fragments.MaterialDesignFragment"
-        android:label="fragment_material_design"
+        android:label="Material Design"
         tools:layout="@layout/fragment_material_design" />
 </navigation>

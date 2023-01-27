@@ -2,18 +2,130 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp">
-        <TextView
-            android:id="@+id/textScrolleable"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="50sp"
-            android:text="@string/long_text"
-            />
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="@dimen/paddingCards">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/paddingCards"
+                android:paddingStart="@dimen/paddingCards"
+                android:paddingBottom="@dimen/paddingCards"
+                >
+            <ImageView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/imageViewCard"
+                android:layout_width="@dimen/card_img_size"
+                android:src="@drawable/ic_hiking"
+                android:layout_height="@dimen/card_img_size"
+                android:contentDescription="@string/image_card_view" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonCardOne"
+                    android:text="@string/card_button"
+                    android:layout_margin="@dimen/buttonsMargin"
+                    app:icon="@drawable/ic_shopping_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageViewCard"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonSkipCard"
+                    android:text="@string/card_button_skip"
+                    app:icon="@drawable/ic_skip_previous"
+                    android:layout_margin="@dimen/buttonsMargin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/buttonCardOne"
+                    app:layout_constraintTop_toBottomOf="@id/imageViewCard"
+                    />
+
+                <TextView
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:id="@+id/textCardViewTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingCards"
+                    android:layout_marginEnd="@dimen/paddingCards"
+                    android:text="HOLA MUNDO"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewCard"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewCard" />
+
+            <TextView
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:layout_margin="@dimen/paddingCards"
+                app:layout_constraintTop_toBottomOf="@id/textCardViewTitle"
+                app:layout_constraintStart_toEndOf="@id/imageViewCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/buttonCardOne"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@string/body_card_view"
+                android:textAppearance="?attr/textAppearanceBody2"
+                />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imageBackgroundCards"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                android:layout_width="match_parent"
+                android:importantForAccessibility="no"
+                android:layout_height="200dp"
+                android:background="@color/blue_cards"
+                />
+
+                <TextView
+                    android:id="@+id/blackFriday"
+                    app:layout_constraintTop_toBottomOf="@id/imageBackgroundCards"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:text="@string/second_cardview_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/paddingCards"
+                    />
+              <com.google.android.material.textfield.TextInputLayout
+                  android:layout_margin="@dimen/paddingCards"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  android:hint="@string/card_edit_text"
+                  app:helperText="@string/text_required"
+                  app:endIconMode="clear_text"
+                  style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                  app:layout_constraintTop_toBottomOf="@id/blackFriday">
+
+                  <com.google.android.material.textfield.TextInputEditText
+                      android:inputType="textUri"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
+              </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

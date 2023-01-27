@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="refreshButton">REFRESH</string>
-    <string name="first_item_menu" translatable="false">Next Fragment</string>
+    <string name="first_item_menu" translatable="false">Store Menu</string>
     <string name="speakButton">SPEAK</string>
     <string name="speech_button">Hi, this is your Android App</string>
     <string name="change_button">Change</string>
@@ -11,5 +11,15 @@
     <string name="home_button">Home</string>
     <string name="principal_button">Principal</string>
     <string name="make_request">Make Request</string>
-    <string name="long_text">esdryftguyhijnnnnnnnnnnnnnnnnnnnnnnnnnnnnnxssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuucccccccccccccccccccccccccccccccccccccccpniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiasassssssssssssssjncjnadcjnadcjnadvjbadjndpoewvnsdvjbnasdjfrdcjbdvoubjsfvijbdvijbasdvuibsvdijbsdvjbasdvijbqwviujbviubsdvubswviubwviubsdvoubADVUBSIUBVWRIUBWIVUBWVIUBAVUBASDVIBSDVIUBVIUWBWRVUWVDUDUDBUDUuxcubwevibwviubwvubwv</string>
+    <string name="add_task_fb">Add_Task</string>
+    <string name="image_card_view">IMAGE CARD VIEW</string>
+    <string name="card_button">BUY</string>
+    <string name="card_button_skip">SKIP</string>
+    <string name="body_card_view">"Este es el texto que se mostrará dentro de mi cardView \n\n"
+    "Aqui podria seguir escribiendo cosas que quisiera por ejemplo y así hacer un texto largo dentro de mi card view y "
+        "que se vea ordenado dentro de mi String"
+    </string>
+    <string name="second_cardview_head">Second CardView</string>
+    <string name="card_edit_text">WRITE THE PRODUCT YOU WANT:</string>
+    <string name="text_required">*Required</string>
 </resources>
