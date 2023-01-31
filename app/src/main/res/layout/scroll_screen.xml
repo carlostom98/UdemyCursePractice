@@ -8,13 +8,16 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp">
+        android:padding="15dp"
+        android:layout_marginBottom="?attr/actionBarSize"
+        >
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            app:cardElevation="@dimen/paddingCards">
+            app:cardElevation="@dimen/paddingCards"
+            android:visibility="gone">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,6 +99,7 @@
                 android:importantForAccessibility="no"
                 android:layout_height="200dp"
                 android:background="@color/blue_cards"
+                android:visibility="gone"
                 />
 
                 <TextView
@@ -109,6 +113,7 @@
                     android:layout_margin="@dimen/paddingCards"
                     />
               <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/productField"
                   android:layout_margin="@dimen/paddingCards"
                   android:layout_width="0dp"
                   android:layout_height="wrap_content"
@@ -125,6 +130,107 @@
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"/>
               </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:hint="@string/password_hint"
+                    android:id="@+id/passwordField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:endIconMode="password_toggle"
+                    android:enabled="false"
+                    app:helperText="@string/text_required"
+                    app:layout_constraintEnd_toEndOf="@id/productField"
+                    app:layout_constraintStart_toStartOf="@id/productField"
+                    app:layout_constraintTop_toBottomOf="@id/productField"                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="numberPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbockPassword"
+                    app:layout_constraintTop_toBottomOf="@id/passwordField"
+                    android:text="@string/enable_password"
+                    app:layout_constraintEnd_toEndOf="@id/productField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:id="@+id/divider"
+                    app:layout_constraintTop_toBottomOf="@id/checkbockPassword"
+                    app:layout_constraintStart_toStartOf="@id/passwordField"
+                    app:layout_constraintEnd_toEndOf="@id/passwordField"
+                    android:layout_margin="@dimen/dimen_divider"
+                    android:background="@color/color_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:layout_marginTop="@dimen/dimen_divider"
+                    android:id="@+id/semiFinalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hello_blank_fragment"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    app:layout_constraintEnd_toEndOf="@id/checkbockPassword"
+                    />
+                <TextView
+                    android:id="@+id/finalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/body_card_view"
+                    app:layout_constraintTop_toBottomOf="@id/semiFinalText"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    app:layout_constraintEnd_toEndOf="@id/checkbockPassword"
+                    app:layout_constraintStart_toStartOf="@id/passwordField"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    />
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:layout_marginTop="@dimen/dimen_divider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/finalText"
+                    android:id="@+id/toogleButtons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btnRed"
+                        android:text="@string/toogle_button_red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="?attr/materialButtonOutlinedStyle"
+                        />
+
+                    <Button
+                        android:id="@+id/btnBlue"
+                        android:text="@string/toogle_button_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="?attr/materialButtonOutlinedStyle"
+                        />
+
+                    <Button
+                        android:id="@+id/btnYellow"
+                        android:text="@string/toogle_button_yellow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="?attr/materialButtonOutlinedStyle"
+                        />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+                <com.google.android.material.button.MaterialButton
+                    app:icon="@drawable/ic_skip_previous"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:text="@string/card_button_skip"
+                    android:layout_margin="@dimen/paddingCards"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toogleButtons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

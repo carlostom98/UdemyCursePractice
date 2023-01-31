@@ -22,4 +22,9 @@
     <string name="second_cardview_head">Second CardView</string>
     <string name="card_edit_text">WRITE THE PRODUCT YOU WANT:</string>
     <string name="text_required">*Required</string>
+    <string name="password_hint">WRITE A PASSWORD</string>
+    <string name="enable_password">ENABLE PASSWORD</string>
+    <string name="toogle_button_red">RED</string>
+    <string name="toogle_button_yellow">Yellow</string>
+    <string name="toogle_button_blue">Blue</string>
 </resources>

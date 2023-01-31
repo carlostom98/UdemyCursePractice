@@ -3,4 +3,5 @@
     <dimen name="card_img_size">88dp</dimen>
     <dimen name="paddingCards">8dp</dimen>
     <dimen name="buttonsMargin">5dp</dimen>
+    <dimen name="dimen_divider">24dp</dimen>
 </resources>
