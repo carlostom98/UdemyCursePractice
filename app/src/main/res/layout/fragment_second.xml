@@ -18,72 +18,20 @@
         android:id="@+id/constraintSecondF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="@+id/constraintSecondF"
-            app:layout_constraintStart_toStartOf="@+id/constraintSecondF"
-            app:layout_constraintTop_toTopOf="@+id/constraintSecondF">
-
-            <TextView
-                android:id="@+id/textOne"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/holo_blue_light"
-                android:text="@{textSecondFragment.component1()}"
-                android:textAlignment="center"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textTwo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@android:color/darker_gray"
-                android:text="@{textSecondFragment.component2()}"
-                android:textAlignment="center"
-                android:textSize="25sp" />
-
-            <Button
-                android:id="@+id/buttonRequest"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:text="@string/make_request"
-                android:textAlignment="center" />
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <ImageView
-            android:id="@+id/imageCamera"
-            android:layout_marginTop="20dp"
-            android:background="@android:drawable/presence_video_away"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-        <EditText
-            android:id="@+id/enterText"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+<androidx.appcompat.widget.SearchView
+    android:id="@+id/searchPokemon"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+        <androidx.recyclerview.widget.RecyclerView
+            app:layout_constraintTop_toBottomOf="@id/searchPokemon"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="@+id/imageCamera" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 </layout>

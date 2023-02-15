@@ -11,6 +11,8 @@ import androidx.navigation.ui.NavigationUI
 import com.example.practiceapplication.R
 import com.example.practiceapplication.databinding.ActivityMainBinding
 import com.example.practiceapplication.viewModel.LanguageViewModel
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -20,11 +22,14 @@ class MainActivity : AppCompatActivity() {
     val languageViewModel:LanguageViewModel by viewModels()
 
     lateinit var context: Context
+    var retrofitO:Retrofit?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         context=this
-
+        retrofitO=Retrofit.Builder().baseUrl("https://pokeapi.co/api/v2/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // add to the toolbar the previus button and burguer menu button
@@ -39,4 +44,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragmentContainer)
         return NavigationUI.navigateUp(navController,appBarConfiguration)
     }
+
+
 }

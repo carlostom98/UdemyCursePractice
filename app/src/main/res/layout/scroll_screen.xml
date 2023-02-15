@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
         android:layout_marginBottom="?attr/actionBarSize"
-        >
+        android:orientation="vertical"
+        android:padding="15dp">
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            app:cardElevation="@dimen/paddingCards"
-            android:visibility="gone">
+            app:cardElevation="@dimen/paddingCards">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/paddingCards"
                 android:paddingStart="@dimen/paddingCards"
-                android:paddingBottom="@dimen/paddingCards"
-                >
-            <ImageView
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/imageViewCard"
-                android:layout_width="@dimen/card_img_size"
-                android:src="@drawable/ic_hiking"
-                android:layout_height="@dimen/card_img_size"
-                android:contentDescription="@string/image_card_view" />
+                android:paddingTop="@dimen/paddingCards"
+                android:paddingBottom="@dimen/paddingCards">
+
+                <ImageView
+                    android:id="@+id/imageViewCard"
+                    android:layout_width="@dimen/card_img_size"
+                    android:layout_height="@dimen/card_img_size"
+                    android:contentDescription="@string/image_card_view"
+                    android:src="@drawable/ic_hiking"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonCardOne"
-                    android:text="@string/card_button"
-                    android:layout_margin="@dimen/buttonsMargin"
-                    app:icon="@drawable/ic_shopping_cart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/buttonsMargin"
+                    android:text="@string/card_button"
+                    app:icon="@drawable/ic_shopping_cart"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/imageViewCard"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/imageViewCard" />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonSkipCard"
-                    android:text="@string/card_button_skip"
-                    app:icon="@drawable/ic_skip_previous"
-                    android:layout_margin="@dimen/buttonsMargin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/buttonsMargin"
+                    android:text="@string/card_button_skip"
+                    app:icon="@drawable/ic_skip_previous"
                     app:layout_constraintEnd_toStartOf="@id/buttonCardOne"
-                    app:layout_constraintTop_toBottomOf="@id/imageViewCard"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/imageViewCard" />
 
                 <TextView
-                    android:textAppearance="?attr/textAppearanceHeadline5"
                     android:id="@+id/textCardViewTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -63,174 +63,174 @@
                     android:layout_marginEnd="@dimen/paddingCards"
                     android:text="HOLA MUNDO"
                     android:textAlignment="center"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageViewCard"
                     app:layout_constraintTop_toTopOf="@+id/imageViewCard" />
 
-            <TextView
-                android:maxLines="3"
-                android:ellipsize="end"
-                android:layout_margin="@dimen/paddingCards"
-                app:layout_constraintTop_toBottomOf="@id/textCardViewTitle"
-                app:layout_constraintStart_toEndOf="@id/imageViewCard"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/buttonCardOne"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/body_card_view"
-                android:textAppearance="?attr/textAppearanceBody2"
-                />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/paddingCards"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:text="@string/body_card_view"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    app:layout_constraintBottom_toTopOf="@id/buttonCardOne"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageViewCard"
+                    app:layout_constraintTop_toBottomOf="@id/textCardViewTitle" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/imageBackgroundCards"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                android:layout_width="match_parent"
-                android:importantForAccessibility="no"
-                android:layout_height="200dp"
-                android:background="@color/blue_cards"
-                android:visibility="gone"
-                />
+
+                <ImageView
+                    android:id="@+id/imageBackgroundCards"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/blue_cards"
+                    android:importantForAccessibility="no"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
 
                 <TextView
                     android:id="@+id/blackFriday"
-                    app:layout_constraintTop_toBottomOf="@id/imageBackgroundCards"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                    android:text="@string/second_cardview_head"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/paddingCards"
-                    />
-              <com.google.android.material.textfield.TextInputLayout
-                  android:id="@+id/productField"
-                  android:layout_margin="@dimen/paddingCards"
-                  android:layout_width="0dp"
-                  android:layout_height="wrap_content"
-                  app:layout_constraintEnd_toEndOf="parent"
-                  app:layout_constraintStart_toStartOf="parent"
-                  android:hint="@string/card_edit_text"
-                  app:helperText="@string/text_required"
-                  app:endIconMode="clear_text"
-                  style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                  app:layout_constraintTop_toBottomOf="@id/blackFriday">
+                    android:text="@string/second_cardview_head"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageBackgroundCards" />
 
-                  <com.google.android.material.textfield.TextInputEditText
-                      android:inputType="textUri"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"/>
-              </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:hint="@string/password_hint"
+                    android:id="@+id/productField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/paddingCards"
+                    android:hint="@string/card_edit_text"
+                    app:endIconMode="clear_text"
+                    app:helperText="@string/text_required"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/blackFriday">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textUri" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/passwordField"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    app:endIconMode="password_toggle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:enabled="false"
+                    android:hint="@string/password_hint"
+                    app:endIconMode="password_toggle"
                     app:helperText="@string/text_required"
                     app:layout_constraintEnd_toEndOf="@id/productField"
                     app:layout_constraintStart_toStartOf="@id/productField"
-                    app:layout_constraintTop_toBottomOf="@id/productField"                    android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+                    app:layout_constraintTop_toBottomOf="@id/productField">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:inputType="numberPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
-                
+
                 <com.google.android.material.checkbox.MaterialCheckBox
                     android:id="@+id/checkbockPassword"
-                    app:layout_constraintTop_toBottomOf="@id/passwordField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/enable_password"
                     app:layout_constraintEnd_toEndOf="@id/productField"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    app:layout_constraintTop_toBottomOf="@id/passwordField" />
 
                 <View
                     android:id="@+id/divider"
-                    app:layout_constraintTop_toBottomOf="@id/checkbockPassword"
-                    app:layout_constraintStart_toStartOf="@id/passwordField"
-                    app:layout_constraintEnd_toEndOf="@id/passwordField"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
                     android:layout_margin="@dimen/dimen_divider"
                     android:background="@color/color_divider"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"/>
+                    app:layout_constraintEnd_toEndOf="@id/passwordField"
+                    app:layout_constraintStart_toStartOf="@id/passwordField"
+                    app:layout_constraintTop_toBottomOf="@id/checkbockPassword" />
 
                 <TextView
-                    android:layout_marginTop="@dimen/dimen_divider"
                     android:id="@+id/semiFinalText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_divider"
                     android:text="@string/hello_blank_fragment"
-                    app:layout_constraintTop_toBottomOf="@id/divider"
                     android:textAppearance="?attr/textAppearanceSubtitle1"
                     app:layout_constraintEnd_toEndOf="@id/checkbockPassword"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/divider" />
+
                 <TextView
                     android:id="@+id/finalText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="5"
                     android:text="@string/body_card_view"
-                    app:layout_constraintTop_toBottomOf="@id/semiFinalText"
                     android:textAppearance="?attr/textAppearanceSubtitle1"
                     app:layout_constraintEnd_toEndOf="@id/checkbockPassword"
                     app:layout_constraintStart_toStartOf="@id/passwordField"
-                    android:maxLines="5"
-                    android:ellipsize="end"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/semiFinalText" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:layout_marginTop="@dimen/dimen_divider"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/finalText"
                     android:id="@+id/toogleButtons"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/finalText">
 
                     <Button
                         android:id="@+id/btnRed"
-                        android:text="@string/toogle_button_red"
+                        style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="?attr/materialButtonOutlinedStyle"
-                        />
+                        android:text="@string/toogle_button_red" />
 
                     <Button
                         android:id="@+id/btnBlue"
-                        android:text="@string/toogle_button_blue"
+                        style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="?attr/materialButtonOutlinedStyle"
-                        />
+                        android:text="@string/toogle_button_blue" />
 
                     <Button
                         android:id="@+id/btnYellow"
-                        android:text="@string/toogle_button_yellow"
+                        style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="?attr/materialButtonOutlinedStyle"
-                        />
+                        android:text="@string/toogle_button_yellow" />
                 </com.google.android.material.button.MaterialButtonToggleGroup>
+
                 <com.google.android.material.button.MaterialButton
-                    app:icon="@drawable/ic_skip_previous"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:text="@string/card_button_skip"
-                    android:layout_margin="@dimen/paddingCards"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/toogleButtons"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/paddingCards"
+                    android:text="@string/card_button_skip"
+                    app:icon="@drawable/ic_skip_previous"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toogleButtons" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

@@ -11,63 +11,44 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.example.practiceapplication.databinding.FragmentSecondBinding
 import com.example.practiceapplication.model.fragmentsText.FragmentTwoText
+import com.example.practiceapplication.model.pokemonModel.ApiService
 import com.example.practiceapplication.view.MainActivity
 import com.example.practiceapplication.viewModel.RequestDataViewModel
 import kotlinx.coroutines.*
 
-class SecondFragment() : Fragment(){
+class SecondFragment() : Fragment() {
 
-    private var _binding:FragmentSecondBinding?=null
+    private var _binding: FragmentSecondBinding? = null
     private val binding get() = _binding!!
     private lateinit var activity: MainActivity
     private val args: com.example.practiceapplication.view.fragments.SecondFragmentArgs by navArgs()
-    var fragmentTwoText=FragmentTwoText()
-    private val requestDataViewModel:RequestDataViewModel by viewModels()
+    var fragmentTwoText = FragmentTwoText()
+    private val requestDataViewModel: RequestDataViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         this.activity = getActivity() as MainActivity
-        _binding= FragmentSecondBinding.inflate(inflater,container, false)
+        _binding = FragmentSecondBinding.inflate(inflater, container, false)
         // Finalizar todas las corrutinas así una falle
-        binding.textSecondFragment=fragmentTwoText
+        binding.textSecondFragment = fragmentTwoText
         return binding.root
     }
 
     @OptIn(DelicateCoroutinesApi::class)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        //Coroutines practice
-        // Global Scope crea hilo secundario
-        //LifecycleScope utiliza el mismo hilo
-        lifecycleScope.launch {
-            val numero1 = async (Dispatchers.IO) {getNumero1()}
-            val numero2 = async (Dispatchers.IO) {getNumero2()}
-            //Las funciones de suspención bloquean la corrutina hasta tener un resultado
-            //Await bloquea la corrutina hasta tener un resultado de ambos números
-            Toast.makeText(this@SecondFragment.context, "El número1 es ${numero1.await()} y el numero 2 es ${numero2.await()}" , Toast.LENGTH_SHORT).show()
-        }
-
-        binding.buttonRequest.setOnClickListener {
-            requestDataViewModel.requestChange()
-        }
-
-        requestDataViewModel.requestState.observe(activity){
-            fragmentTwoText.textOne=it
-            fragmentTwoText.textTwo=it
-            binding.invalidateAll()
-        }
-    }
-     fun getNumero1():Float{
-        Thread.sleep(2000)
-        return 10000F
-    }
-    fun getNumero2():Float{
-        Thread.sleep(3000)
-        return 20000F
+        searchByName()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    private fun searchByName() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val call =
+                activity.retrofitO?.create(ApiService::class.java)?.getPokemonsByName()
+            val pokemones =call?.body()
+
+                println(pokemones!!.results[1].pokemonName)
+
+        }
     }
 }

@@ -39,6 +39,9 @@ android {
     }
 }
 
+ext.picasso_version = '2.71828'
+ext.retrofit_version = '2.3.0'
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -64,4 +67,9 @@ dependencies {
     implementation ("com.google.android.material:material:1.7.0")
     //Coroutine 2
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    //Picasso
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 }
