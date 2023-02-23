@@ -19,30 +19,29 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var appBarConfiguration: AppBarConfiguration
 
-    val languageViewModel:LanguageViewModel by viewModels()
+    val languageViewModel: LanguageViewModel by viewModels()
 
     lateinit var context: Context
-    var retrofitO:Retrofit?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        context=this
-        retrofitO=Retrofit.Builder().baseUrl("https://pokeapi.co/api/v2/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        context = this
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // add to the toolbar the previus button and burguer menu button
-       drawerLayout= binding.drawerMain
+        drawerLayout = binding.drawerMain
         val navController = findNavController(R.id.fragmentContainer)
-        NavigationUI.setupActionBarWithNavController(this, navController,drawerLayout)
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-        NavigationUI.setupWithNavController(binding.navigationDraw,navController)
+        NavigationUI.setupWithNavController(binding.navigationDraw, navController)
     }
+
     override fun onSupportNavigateUp(): Boolean {
         //Enable the functions of the nav drawer menu and back arrow
         val navController = findNavController(R.id.fragmentContainer)
-        return NavigationUI.navigateUp(navController,appBarConfiguration)
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
 
 

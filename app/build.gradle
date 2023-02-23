@@ -40,7 +40,7 @@ android {
 }
 
 ext.picasso_version = '2.71828'
-ext.retrofit_version = '2.3.0'
+ext.retrofit_version = '2.9.0'
 
 dependencies {
 
@@ -72,4 +72,6 @@ dependencies {
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
 }

@@ -27,4 +27,5 @@
     <string name="toogle_button_red">RED</string>
     <string name="toogle_button_yellow">Yellow</string>
     <string name="toogle_button_blue">Blue</string>
+    <string name="button_search_pokemon">SEARCH POKEMON</string>
 </resources>
